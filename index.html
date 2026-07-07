@@ -227,6 +227,32 @@ batInput.onkeydown = function(e){
     alert("警告次数已重置，页面即将刷新");
     location.reload();
 });
+    (function(){
+    const mask = document.getElementById('mask');
+    const box = document.getElementById('myAlert');
+    const text = document.getElementById('alertText');
+    const btn = document.getElementById('alertBtn');
+
+    window.alert = function(msg){
+        text.innerText = msg;
+        mask.style.display = 'block';
+        box.style.display = 'block';
+    }
+
+    btn.onclick = function(){
+        mask.style.display = 'none';
+        box.style.display = 'none';
+    }
+    mask.onclick = function(){
+        mask.style.display = 'none';
+        box.style.display = 'none';
+    }
+})();
 </script>
+    <div id="mask" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;"></div>
+<div id="myAlert" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:32px 40px;border-radius:16px;z-index:1000;min-width:320px;">
+    <p id="alertText" style="font-size:22px;margin:0 0 30px 0;"></p>
+    <button id="alertBtn" style="display:block;margin:0 auto;border:none;background:#1677ff;color:#fff;padding:10px 36px;border-radius:99px;font-size:18px;cursor:pointer;">确定</button>
+</div>
 </body>
 </html>

@@ -178,10 +178,10 @@ inputDom.onkeydown = function(e){
 
 // ============ 新增：Real Batman 输入+警告封禁逻辑 ============
 // 读取警告次数，页面刷新不会清零
-if(!sessionStorage.getItem("warnCount")){
-    sessionStorage.setItem("warnCount", 0);
+if(!localStorage.getItem("warnCount")){
+    localStorage.setItem("warnCount", 0);
 }
-let warnCount = Number(sessionStorage.getItem("warnCount"));
+let warnCount = Number(localStorage.getItem("warnCount"));
 
 const batInput = document.getElementById("bat-input");
 const batSubmitBtn = document.getElementById("bat-submit");
@@ -195,7 +195,7 @@ batSubmitBtn.onclick = function(){
     // 只要包含 布鲁斯 或者 蝙蝠侠 任意一个词就触发警告
     if(userText.includes("布鲁斯") || userText.includes("蝙蝠侠")){
         warnCount += 1;
-        sessionStorage.setItem("warnCount", warnCount);
+        localStorage.setItem("warnCount", warnCount);
         switch(warnCount){
             case 1:
                 alert("此内容无法输出");

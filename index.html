@@ -199,7 +199,7 @@ const banPageUrl = "blank.html";
 
 batSubmitBtn.onclick = function(){
     let userText = batInput.value.trim();
-    if(userText.includes("布鲁斯") || userText.includes("蝙蝠侠")){
+    if(userText.includes("布鲁斯") && userText.includes("蝙蝠侠")){
         warnCount += 1;
         localStorage.setItem("warnCount", warnCount);
 

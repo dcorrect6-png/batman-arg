@@ -226,8 +226,9 @@ batSubmitBtn.onclick = function(){
 batInput.onkeydown = function(e){
     if(e.key === "Enter") batSubmitBtn.click();
 }
-    // 自定义无域名弹窗代码
-    (function(){
+
+// 自定义无域名弹窗代码
+(function(){
     const mask = document.getElementById('mask');
     const box = document.getElementById('myAlert');
     const text = document.getElementById('alertText');

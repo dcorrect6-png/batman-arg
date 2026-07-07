@@ -137,7 +137,11 @@ p {
 <!-- 新增Real Batman输入栏目 -->
 <div class="realbat-area">
     <!-- 重置按钮，放在提交按钮上方 -->
-    <button id="resetBtn" style="margin-bottom:6px;font-size:11px;padding:2px 8px;background:#000;color:#ff2222;border:2px solid #ff2222;cursor:pointer;">重置记录</button>
+<button id="resetBtn" 
+style="margin-bottom:6px;font-size:11px;padding:2px 8px;background:#000;color:#ff2222;border:2px solid #ff2222;cursor:pointer;"
+onclick="localStorage.removeItem('warnCount');alert('警告次数已重置，页面即将刷新');location.reload();">
+重置记录
+</button>
     <label>Your final inference:</label>
     <input id="bat-input" placeholder="输入你的最终想法（词语/句子）">
     <button id="bat-submit">提交答案</button>
@@ -222,11 +226,7 @@ batSubmitBtn.onclick = function(){
 batInput.onkeydown = function(e){
     if(e.key === "Enter") batSubmitBtn.click();
 }
-    document.getElementById("resetBtn").addEventListener("click",function(){
-    localStorage.removeItem("warnCount");
-    alert("警告次数已重置，页面即将刷新");
-    location.reload();
-});
+    // 自定义无域名弹窗代码
     (function(){
     const mask = document.getElementById('mask');
     const box = document.getElementById('myAlert');

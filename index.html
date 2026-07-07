@@ -137,9 +137,8 @@ p {
 <!-- 新增Real Batman输入栏目 -->
 <div class="realbat-area">
     <!-- 重置按钮，放在提交按钮上方 -->
-<button id="resetBtn" 
-style="margin-bottom:6px;font-size:11px;padding:2px 8px;background:#000;color:#ff2222;border:2px solid #ff2222;cursor:pointer;"
-onclick="localStorage.removeItem('warnCount');window.alert('警告次数已重置，页面即将刷新');location.reload();">
+<button id="resetBtn"
+style="margin-bottom:6px;font-size:11px;padding:2px 8px;background:#000;color:#ff2222;border:2px solid #ff2222;cursor:pointer;">
 重置记录
 </button>
     <label>Your final inference:</label>
@@ -222,12 +221,19 @@ batSubmitBtn.onclick = function(){
     }
     // else 直接删掉，不含违禁词什么都不做，不跳转结局
 }
-// 输入框回车等同于点击提交
+// 1、回车提交原有代码
 batInput.onkeydown = function(e){
     if(e.key === "Enter") batSubmitBtn.click();
 }
 
-// 自定义无域名弹窗代码
+// 2、新增重置按钮点击绑定（必须写在这里）
+document.getElementById('resetBtn').onclick = function(){
+    localStorage.removeItem('warnCount');
+    alert('警告次数已重置，页面即将刷新');
+    location.reload();
+}
+
+// 3、最后才是重写alert弹窗代码（放在最末尾）
 (function(){
     const mask = document.getElementById('mask');
     const box = document.getElementById('myAlert');

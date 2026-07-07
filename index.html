@@ -192,10 +192,10 @@ const banPageUrl = "blank.html";
 
 batSubmitBtn.onclick = function(){
     let userText = batInput.value.trim();
-    // 只要包含 布鲁斯 或者 蝙蝠侠 任意一个词就触发警告
     if(userText.includes("布鲁斯") || userText.includes("蝙蝠侠")){
         warnCount += 1;
         localStorage.setItem("warnCount", warnCount);
+
         switch(warnCount){
             case 1:
                 alert("此内容无法输出");
@@ -206,13 +206,14 @@ batSubmitBtn.onclick = function(){
                 alert("你已经受到警告，禁止向互联网输出类似内容");
                 break;
             case 5:
+                location.href = endPageUrl;
+                break;
+            default:
                 location.href = banPageUrl;
                 break;
         }
-    }else{
-        // 输入正确答案跳转结局
-        location.href = endPageUrl;
     }
+    // else 直接删掉，不含违禁词什么都不做，不跳转结局
 }
 // 输入框回车等同于点击提交
 batInput.onkeydown = function(e){

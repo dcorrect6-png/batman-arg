@@ -139,7 +139,7 @@ p {
     <!-- 重置按钮，放在提交按钮上方 -->
 <button id="resetBtn" 
 style="margin-bottom:6px;font-size:11px;padding:2px 8px;background:#000;color:#ff2222;border:2px solid #ff2222;cursor:pointer;"
-onclick="localStorage.removeItem('warnCount');alert('警告次数已重置，页面即将刷新');location.reload();">
+onclick="localStorage.removeItem('warnCount');window.alert('警告次数已重置，页面即将刷新');location.reload();">
 重置记录
 </button>
     <label>Your final inference:</label>

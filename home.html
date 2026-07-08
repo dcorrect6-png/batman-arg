@@ -218,22 +218,36 @@ a{
     </div>
 
     <!-- 原喜欢栏改为 私信（通讯）面板 -->
-    <div class="tab-panel" id="message">
-        <a href="msg1.html" class="tweet-card">
-            <div>
-                <a href="msgUser.html">
-                    <div class="tweet-avatar" style="background:url('images/user (5).jpg') center/cover;"></div>
-                </a>
-            </div>
-            <div class="tweet-content">
-                <div class="tweet-name-row">
-                    <a href="msgUser.html" class="tweet-name">一般路过大都会</a>
-                    <span class="tweet-tag">@contact · 4天</span>
+<div class="tab-panel" id="message">
+    <!-- 系统置顶公告 -->
+    <div style="padding:14px 16px;border-bottom:1px solid #eee;background:#f8f8f8;">
+        <div style="display:flex;gap:12px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#1d9bf0;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">系</div>
+            <div style="flex:1;">
+                <div style="font-weight:bold;margin-bottom:4px;">系统官方通知 <span style="font-size:12px;color:#777;">【置顶】</span></div>
+                <div style="font-size:14px;color:#333;line-height:1.5;">
+                   由于你的账号有风险，目前暂时无法回复其他人。如有疑问可到官方进行邮件。
                 </div>
-                <div class="tweet-text">嘿，你看了吗？超人今天又在大都会出现了!我和他擦肩而过啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
             </div>
-        </a>
+        </div>
     </div>
+
+    <!-- 下方原本你的私信对话 -->
+    <a href="msg1.html" class="tweet-card">
+        <div>
+            <a href="msgUser.html">
+                <div class="tweet-avatar" style="background:url('images/user (5).jpg') center/cover;"></div>
+            </a>
+        </div>
+        <div class="tweet-content">
+            <div class="tweet-name-row">
+                <a href="msgUser.html" class="tweet-name">一般路过大都会</a>
+                <span class="tweet-tag">@contact · 4天</span>
+            </div>
+            <div class="tweet-text">嘿，你看了吗？超人今天又在大都会出现了！我和他擦肩而过啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+        </div>
+    </a>
+</div>
 </div>
 
 <script>

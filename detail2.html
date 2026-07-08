@@ -26,7 +26,6 @@ body{
     border-bottom:1px solid #eee;
     margin-bottom:20px;
 }
-/* 评论样式 和detail1完全一致 */
 .comment-item {
     display: flex;
     gap: 12px;
@@ -58,12 +57,30 @@ body{
     margin-top: 6px;
     line-height: 1.55;
     color: #333;
+    word-break: break-all;
 }
 </style>
 </head>
 <body>
+<a href="home.html" class="back">← 返回首页</a>
+<div class="main-post">
+    <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;width:48px;height:48px;border-radius:50%;float:left;"></div>
+    <div style="margin-left:64px;overflow:hidden;">
+        <div class="tweet-name-row">
+            <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+            <span class="tweet-tag">@Message_WhatIf · 一天前</span>
+        </div>
+        <div class="tweet-text" style="margin-top:8px;">
+            我加了滤镜
+            <br>
+            <img src="images/batman (2).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+        </div>
+    </div>
+</div>
 
-<!-- 这里放你页面原本的返回按钮、主帖子内容 -->
+<!-- 原有你写好的评论直接粘贴在此处 -->
+</body>
+</html>
 
 <!-- 下方粘贴所有评论代码 -->
 <div class="comment-item">

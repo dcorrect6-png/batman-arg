@@ -250,7 +250,7 @@ a{
 
     <!-- 原喜欢栏改为 私信（通讯）面板 -->
 <div class="tab-panel" id="message">
-    <!-- 置顶公告 -->
+    <!-- 系统置顶公告 -->
     <div style="padding:14px 16px;border-bottom:1px solid #eee;background:#f8f8f8;">
         <div style="display:flex;gap:12px;">
             <div style="width:48px;height:48px;border-radius:50%;background:#1d9bf0;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">系</div>
@@ -263,34 +263,61 @@ a{
         </div>
     </div>
 
-    <!-- 所有私信卡片全部只允许写在这个范围内，新增直接往下复制粘贴即可 -->
-    <div onclick="location.href='msg1.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='msgUser.html'" class="tweet-avatar" style="background:url('images/user (10).jpg') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='msgUser.html'" class="tweet-name">一般路过大都会</span>
-                <span class="tweet-tag">@contact · 3天</span>
-            </div>
-            <div class="tweet-text">别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的</div>
-        </div>
-    </div>
+    <div id="msgContainer"></div>
+</div>
 
-    <div onclick="location.href='msg2.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='msgUser2.html'" class="tweet-avatar" style="background:url('images/zy.png') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='msgUser2.html'" class="tweet-name">L.D.F</span>
-                <span class="tweet-tag">@LoveDeathstrokeForever · 2天</span>
-            </div>
-            <div class="tweet-text">有见过丧钟吗</div>
-        </div>
-    </div>
+<script>
+// 所有私信数据源，只需要填写数字days（越小越新，排在最上面）
+const msgList = [
+    {
+        link: "msg1.html",
+        userPage: "msgUser.html",
+        avatar: "images/user (10).jpg",
+        name: "一般路过大都会",
+        tag: "@contact",
+        timeText: "3天",
+        days: 3,   // 用来排序：3天前
+        content: "别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的"
+    },
+    {
+        link: "msg2.html",
+        userPage: "msgUser2.html",
+        avatar: "images/zy.png",
+        name: "L.D.F",
+        tag: "@LoveDeathstrokeForever",
+        timeText: "2天",
+        days: 2,   // 2天前，比3天更新，会自动排在上方
+        content: "有见过丧钟吗"
+    }
+];
 
-    <!-- 以后再加第三条、第四条私信，直接在这行上面粘贴新卡片，会自动紧跟在上一条下方 -->
+// 按days升序排序：天数数字越小 → 越新 → 越靠前
+msgList.sort((a, b) => a.days - b.days);
+
+// 渲染列表
+function renderMsg() {
+    const wrap = document.getElementById("msgContainer");
+    let html = "";
+    msgList.forEach(item => {
+        html += `
+<div onclick="location.href='${item.link}'" class="tweet-card">
+    <div>
+        <div onclick="event.stopPropagation();location.href='${item.userPage}'" class="tweet-avatar" style="background:url('${item.avatar}') center/cover;"></div>
+    </div>
+    <div class="tweet-content">
+        <div class="tweet-name-row">
+            <span onclick="event.stopPropagation();location.href='${item.userPage}'" class="tweet-name">${item.name}</span>
+            <span class="tweet-tag">${item.tag} · ${item.timeText}</span>
+        </div>
+        <div class="tweet-text">${item.content}</div>
+    </div>
+</div>
+        `;
+    });
+    wrap.innerHTML = html;
+}
+renderMsg();
+</script>
 
 </div>
 

@@ -149,37 +149,21 @@ a{
 <!-- 可上下滑动信息流区域 -->
 <div class="feed-box">
     <!-- 帖子面板 -->
-    <div class="tab-panel show" id="post">
-        <a href="detail1.html" class="tweet-card">
-            <div>
-                <a href="userA.html">
-                    <div class="tweet-avatar" style="background:url('images/user (1).jpg') center/cover;"></div>
-                </a>
+    <!-- 帖子面板 -->
+<div class="tab-panel show" id="post">
+    <div onclick="location.href='detail1.html'" class="tweet-card">
+        <div>
+            <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
+        </div>
+        <div class="tweet-content">
+            <div class="tweet-name-row">
+                <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+                <span class="tweet-tag">@Message_WhatIf · 12小时前</span>
             </div>
-            <div class="tweet-content">
-                <div class="tweet-name-row">
-                    <a href="userA.html" class="tweet-name">访客A</a>
-                    <span class="tweet-tag">@guest001 · 1小时</span>
-                </div>
-                <div class="tweet-text">兄弟你拍的蝙蝠侠背影太牛了</div>
-            </div>
-        </a>
-
-        <a href="detail2.html" class="tweet-card">
-            <div>
-                <a href="userB.html">
-                    <div class="tweet-avatar" style="background:url('images/user (2).jpg') center/cover;"></div>
-                </a>
-            </div>
-            <div class="tweet-content">
-                <div class="tweet-name-row">
-                    <a href="userB.html" class="tweet-name">访客B</a>
-                    <span class="tweet-tag">@guest002 · 3小时</span>
-                </div>
-                <div class="tweet-text">我好喜欢你对蝙蝠侠的看法！加个好友我仔细和你说说关于我的想法 </div>
-            </div>
-        </a>
+            <div class="tweet-text">蝙蝠侠是不是换人了啊（doge）</div>
+        </div>
     </div>
+</div>
 
     <!-- 回复面板 -->
     <div class="tab-panel" id="reply">

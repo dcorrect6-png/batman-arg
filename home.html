@@ -11,14 +11,16 @@
     box-sizing:border-box;
 }
 body{
-    background:#000;
-    color:#fff;
+    background:#ffffff;
+    color:#000000;
     font-family:system-ui,-apple-system,sans-serif;
     max-width:600px;
     margin:0 auto;
-    border-left:1px solid #333;
-    border-right:1px solid #333;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
     min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 a{
     color:inherit;
@@ -27,13 +29,13 @@ a{
 /* 顶部个人信息栏 */
 .profile-header{
     padding:16px;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #eeeeee;
 }
 .avatar{
     width:72px;
     height:72px;
     border-radius:50%;
-    background:#444;
+    background:#cccccc;
     margin-bottom:10px;
 }
 .username{
@@ -42,24 +44,24 @@ a{
     margin-bottom:4px;
 }
 .user-id{
-    color:#888;
+    color:#777777;
     margin-bottom:12px;
 }
 /* 推文Tab切换 */
 .tab-wrap{
     display:flex;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #eeeeee;
 }
 .tab-item{
     flex:1;
     text-align:center;
     padding:14px 0;
-    color:#aaa;
+    color:#777;
     cursor:pointer;
     position:relative;
 }
 .tab-item.active{
-    color:#fff;
+    color:#000;
 }
 .tab-item.active::after{
     content:"";
@@ -72,27 +74,27 @@ a{
     background:#1d9bf0;
     border-radius:2px;
 }
-/* 信息流容器 支持原生上下滑动 */
+/* 信息流容器 自适应高度不留空白 */
 .feed-box{
     overflow-y:auto;
-    height:calc(100vh - 240px);
+    flex:1;
 }
 /* 单条推文卡片 整块可点击 */
 .tweet-card{
     padding:14px 16px;
-    border-bottom:1px solid #333;
+    border-bottom:1px solid #eeeeee;
     display:flex;
     gap:12px;
     cursor:pointer;
 }
 .tweet-card:hover{
-    background:#151515;
+    background:#f7f7f7;
 }
 .tweet-avatar{
     width:48px;
     height:48px;
     border-radius:50%;
-    background:#333;
+    background:#cccccc;
     flex-shrink:0;
 }
 .tweet-content{
@@ -108,12 +110,12 @@ a{
     font-weight:bold;
 }
 .tweet-tag{
-    color:#888;
+    color:#777777;
 }
 .tweet-text{
     line-height:1.5;
     font-size:15px;
-    color:#eee;
+    color:#222222;
 }
 /* 板块默认隐藏，active才显示 */
 .tab-panel{
@@ -136,19 +138,18 @@ a{
     <p>这里写个人简介，仿X主页简介文案</p>
 </div>
 
-<!-- Tab栏 -->
+<!-- Tab栏：喜欢 → 私信（通讯） -->
 <div class="tab-wrap">
     <div class="tab-item active" data-tab="post">帖子</div>
     <div class="tab-item" data-tab="reply">回复</div>
     <div class="tab-item" data-tab="media">媒体</div>
-    <div class="tab-item" data-tab="like">喜欢</div>
+    <div class="tab-item" data-tab="message">私信（通讯）</div>
 </div>
 
 <!-- 可上下滑动信息流区域 -->
 <div class="feed-box">
     <!-- 帖子面板 -->
     <div class="tab-panel show" id="post">
-        <!-- 第一条 整卡片点击跳帖子详情；头像/昵称点进访客A主页 -->
         <a href="detail1.html" class="tweet-card">
             <div>
                 <a href="userA.html">
@@ -216,27 +217,27 @@ a{
         </a>
     </div>
 
-    <!-- 喜欢面板 -->
-    <div class="tab-panel" id="like">
-        <a href="like1.html" class="tweet-card">
+    <!-- 原喜欢栏改为 私信（通讯）面板 -->
+    <div class="tab-panel" id="message">
+        <a href="msg1.html" class="tweet-card">
             <div>
-                <a href="otherUser.html">
+                <a href="msgUser.html">
                     <div class="tweet-avatar"></div>
                 </a>
             </div>
             <div class="tweet-content">
                 <div class="tweet-name-row">
-                    <a href="otherUser.html" class="tweet-name">他人帖子</a>
-                    <span class="tweet-tag">@other · 4天</span>
+                    <a href="msgUser.html" class="tweet-name">联络人</a>
+                    <span class="tweet-tag">@contact · 4天</span>
                 </div>
-                <div class="tweet-text">被点赞收藏的关键帖子，隐藏伏笔</div>
+                <div class="tweet-text">私密通讯对话内容，可存放关键密码与隐藏线索</div>
             </div>
         </a>
     </div>
 </div>
 
 <script>
-// 标签页切换
+// 标签页切换逻辑同步修改对应ID
 const tabs = document.querySelectorAll('.tab-item');
 const panels = document.querySelectorAll('.tab-panel');
 tabs.forEach(tab => {

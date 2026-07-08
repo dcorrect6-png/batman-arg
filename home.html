@@ -250,7 +250,7 @@ a{
 
     <!-- 原喜欢栏改为 私信（通讯）面板 -->
 <div class="tab-panel" id="message">
-    <!-- 系统置顶公告 -->
+    <!-- 置顶公告 -->
     <div style="padding:14px 16px;border-bottom:1px solid #eee;background:#f8f8f8;">
         <div style="display:flex;gap:12px;">
             <div style="width:48px;height:48px;border-radius:50%;background:#1d9bf0;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">系</div>
@@ -263,32 +263,35 @@ a{
         </div>
     </div>
 
-    <!-- 下方原本你的私信对话 -->
-<div onclick="location.href='msg1.html'" class="tweet-card">
-    <div>
-        <div onclick="event.stopPropagation();location.href='msgUser.html'" class="tweet-avatar" style="background:url('images/user (10).jpg') center/cover;"></div>
-    </div>
-    <div class="tweet-content">
-        <div class="tweet-name-row">
-            <span onclick="event.stopPropagation();location.href='msgUser.html'" class="tweet-name">一般路过大都会</span>
-            <span class="tweet-tag">@contact · 3天</span>
+    <!-- 所有私信卡片全部只允许写在这个范围内，新增直接往下复制粘贴即可 -->
+    <div onclick="location.href='msg1.html'" class="tweet-card">
+        <div>
+            <div onclick="event.stopPropagation();location.href='msgUser.html'" class="tweet-avatar" style="background:url('images/user (10).jpg') center/cover;"></div>
         </div>
-        <div class="tweet-text">别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的</div>
+        <div class="tweet-content">
+            <div class="tweet-name-row">
+                <span onclick="event.stopPropagation();location.href='msgUser.html'" class="tweet-name">一般路过大都会</span>
+                <span class="tweet-tag">@contact · 3天</span>
+            </div>
+            <div class="tweet-text">别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的</div>
+        </div>
     </div>
-</div>
-</div>
-</div>
+
     <div onclick="location.href='msg2.html'" class="tweet-card">
-    <div>
-        <div onclick="event.stopPropagation();location.href='msgUser2.html'" class="tweet-avatar" style="background:url('images/zy.png') center/cover;"></div>
-    </div>
-    <div class="tweet-content">
-        <div class="tweet-name-row">
-            <span onclick="event.stopPropagation();location.href='msgUser2.html'" class="tweet-name">L.D.F</span>
-            <span class="tweet-tag">@LoveDeathstrokeForever · 2天</span>
+        <div>
+            <div onclick="event.stopPropagation();location.href='msgUser2.html'" class="tweet-avatar" style="background:url('images/zy.png') center/cover;"></div>
         </div>
-        <div class="tweet-text">有见过丧钟吗</div>
+        <div class="tweet-content">
+            <div class="tweet-name-row">
+                <span onclick="event.stopPropagation();location.href='msgUser2.html'" class="tweet-name">L.D.F</span>
+                <span class="tweet-tag">@LoveDeathstrokeForever · 2天</span>
+            </div>
+            <div class="tweet-text">有见过丧钟吗</div>
+        </div>
     </div>
+
+    <!-- 以后再加第三条、第四条私信，直接在这行上面粘贴新卡片，会自动紧跟在上一条下方 -->
+
 </div>
 
 <script>

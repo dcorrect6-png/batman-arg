@@ -62,8 +62,21 @@ body{
 </style>
 </head>
 <body>
-<!-- 此处粘贴返回按钮、帖子主内容 -->
-
+<a href="home.html" class="back">← 返回首页</a>
+<div class="main-post">
+   <div class="avatar" onclick="location.href='home.html'" style="background:url('images/user.jpg') center/cover;"></div>
+    <div style="margin-left:64px;overflow:hidden;">
+        <div class="tweet-name-row">
+            <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+            <span class="tweet-tag">@Message_WhatIf · 三天前</span>
+        </div>
+        <div class="tweet-text" style="margin-top:8px;">
+            DARK HERO
+            <br>
+            <img src="images/batman (1).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+        </div>
+    </div>
+</div>
 <!-- 下方粘贴所有评论代码 -->
 <div class="comment-item">
     <div class="avatar" onclick="location.href='user (1).html'" style="background:url('images/user (1).jpg') center/cover;"></div>

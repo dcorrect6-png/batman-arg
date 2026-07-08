@@ -1,3 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帖子详情</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:#fff;
+    max-width:600px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    padding:16px;
+}
+.back{
+    display:inline-block;
+    color:#1d9bf0;
+    text-decoration:none;
+    margin-bottom:20px;
+    font-size:18px;
+}
+.main-post{
+    padding-bottom:24px;
+    border-bottom:1px solid #eee;
+    margin-bottom:20px;
+}
+/* 评论样式 和detail1完全一致 */
+.comment-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+.comment-item .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+.comment-item .info {
+    flex: 1;
+}
+.comment-item .name {
+    font-weight: bold;
+    cursor: pointer;
+}
+.comment-item .tag {
+    color: #888;
+    font-size: 13px;
+    margin-left: 6px;
+}
+.comment-item .content {
+    margin-top: 6px;
+    line-height: 1.55;
+    color: #333;
+}
+</style>
+</head>
+<body>
+
+<!-- 这里放你页面原本的返回按钮、主帖子内容 -->
+
+<!-- 下方粘贴所有评论代码 -->
 <div class="comment-item">
     <div class="avatar" onclick="location.href='user (1).html'" style="background:url('images/user (1).jpg') center/cover;"></div>
     <div class="info">

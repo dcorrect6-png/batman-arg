@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私信对话</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:#fff;
+    max-width:600px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    min-height:100vh;
+}
+.top-bar{
+    padding:14px 16px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+.back{
+    font-size:18px;
+    color:#1d9bf0;
+    cursor:pointer;
+}
+.ava{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:url("images/zy.png") center/cover;
+    flex-shrink:0;
+    cursor:pointer;
+}
+.user-info .name{
+    font-weight:bold;
+    cursor:pointer;
+}
+.user-info .id{
+    font-size:13px;
+    color:#777;
+}
+/* 聊天消息区 */
+.chat-wrap{
+    padding:16px;
+}
+.msg-item{
+    margin-bottom:16px;
+    display:flex;
+    gap:10px;
+}
+.msg-item.self{
+    flex-direction:row-reverse;
+}
+.msg-ava{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    flex-shrink:0;
+}
+.msg-item.other .msg-ava{
+    background:url("images/zy.png") center/cover;
+}
+.msg-item.self .msg-ava{
+    background:url("images/user.jpg") center/cover;
+}
+.msg-bubble{
+    max-width:75%;
+    padding:10px 12px;
+    border-radius:12px;
+    line-height:1.5;
+}
+.msg-item.other .msg-bubble{
+    background:#f1f1f1;
+    border-top-left-radius:2px;
+}
+.msg-item.self .msg-bubble{
+    background:#1d9bf0;
+    color:#fff;
+    border-top-right-radius:2px;
+}
+.time-tip{
+    text-align:center;
+    font-size:12px;
+    color:#aaa;
+    margin:20px 0;
+}
+</style>
+</head>
+<body>
+<div class="top-bar">
+    <div class="back" onclick="history.back()">←</div>
+    <div class="ava" onclick="location.href='msgUser2.html'"></div>
+    <div class="user-info">
+        <div class="name" onclick="location.href='msgUser2.html'">L.D.F</div>
+        <div class="id">@LoveDeathstrokeForever</div>
+    </div>
+</div>
+
+<div class="chat-wrap">
+    <div class="time-tip">2天前</div>
+
+    <!-- 对方发来第一条 -->
+    <div class="msg-item other">
+        <div class="msg-ava"></div>
+        <div class="msg-bubble">我知道你想要什么</div>
+    </div>
+</div>
+    <div class="msg-item other">
+        <div class="msg-ava"></div>
+        <div class="msg-bubble">绿箭侠新出炉照片一张要不要</div>
+    </div>
+</div>
+    <div class="msg-item other">
+        <div class="msg-ava"></div>
+        <div class="msg-bubble">绿箭侠新出炉照片一张要不要</div>
+    </div>
+</div>
+  <div class="msg-item other">
+    <div class="msg-ava"></div>
+    <div class="msg-bubble">
+        <img src="images/zy.png" style="max-width:220px;border-radius:8px;margin-top:6px;">
+    </div>
+</div>
+    <div class="msg-item other">
+        <div class="msg-ava"></div>
+        <div class="msg-bubble">有见过丧钟吗</div>
+    </div>
+</div>
+</body>
+</html>

@@ -107,6 +107,13 @@ body{
     font-size:15px;
     color:#eee;
 }
+/* 板块默认隐藏，active才显示 */
+.tab-panel{
+    display:none;
+}
+.tab-panel.show{
+    display:block;
+}
 </style>
 </head>
 <body>
@@ -120,46 +127,98 @@ body{
 
 <!-- Tab栏 -->
 <div class="tab-wrap">
-    <div class="tab-item active">帖子</div>
-    <div class="tab-item">回复</div>
-    <div class="tab-item">媒体</div>
-    <div class="tab-item">喜欢</div>
+    <div class="tab-item active" data-tab="post">帖子</div>
+    <div class="tab-item" data-tab="reply">回复</div>
+    <div class="tab-item" data-tab="media">媒体</div>
+    <div class="tab-item" data-tab="like">喜欢</div>
 </div>
 
 <!-- 可上下滑动信息流区域 -->
 <div class="feed-box">
-    <!-- 单条留言/帖子卡片，复制多条就能无限滚动 -->
-    <div class="tweet-card">
-        <div class="tweet-avatar"></div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span class="tweet-name">访客A</span>
-                <span class="tweet-tag">@guest001 · 1小时</span>
+    <!-- 帖子面板 -->
+    <div class="tab-panel show" id="post">
+        <div class="tweet-card">
+            <div class="tweet-avatar"></div>
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span class="tweet-name">访客A</span>
+                    <span class="tweet-tag">@guest001 · 1小时</span>
+                </div>
+                <div class="tweet-text">第一条留言内容，你可以在这里填充剧情线索、伏笔文字</div>
             </div>
-            <div class="tweet-text">第一条留言内容，你可以在这里填充剧情线索、伏笔文字</div>
+        </div>
+        <div class="tweet-card">
+            <div class="tweet-avatar"></div>
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span class="tweet-name">访客B</span>
+                    <span class="tweet-tag">@guest002 · 3小时</span>
+                </div>
+                <div class="tweet-text">第二条留言，埋藏解谜关键信息，和主页面线索呼应</div>
+            </div>
         </div>
     </div>
-    <div class="tweet-card">
-        <div class="tweet-avatar"></div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span class="tweet-name">访客B</span>
-                <span class="tweet-tag">@guest002 · 3小时</span>
+
+    <!-- 回复面板 -->
+    <div class="tab-panel" id="reply">
+        <div class="tweet-card">
+            <div class="tweet-avatar"></div>
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span class="tweet-name">访客C</span>
+                    <span class="tweet-tag">@guest003 · 半天</span>
+                </div>
+                <div class="tweet-text">这条是回复内容，可以放互动对话类线索</div>
             </div>
-            <div class="tweet-text">第二条留言，埋藏解谜关键信息，和主页面线索呼应</div>
         </div>
     </div>
-    <div class="tweet-card">
-        <div class="tweet-avatar"></div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span class="tweet-name">神秘账号</span>
-                <span class="tweet-tag">@secretxxx · 昨天</span>
+
+    <!-- 媒体面板 -->
+    <div class="tab-panel" id="media">
+        <div class="tweet-card">
+            <div class="tweet-avatar"></div>
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span class="tweet-name">系统上传</span>
+                    <span class="tweet-tag">@media · 2天</span>
+                </div>
+                <div class="tweet-text">此处可以插入图片、照片类线索</div>
             </div>
-            <div class="tweet-text">隐藏剧情留言，放密码、隐藏页面地址这类线索</div>
         </div>
     </div>
-    <!-- 多复制几份卡片，内容越多滚动效果越明显 -->
+
+    <!-- 喜欢面板 -->
+    <div class="tab-panel" id="like">
+        <div class="tweet-card">
+            <div class="tweet-avatar"></div>
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span class="tweet-name">他人帖子</span>
+                    <span class="tweet-tag">@other · 4天</span>
+                </div>
+                <div class="tweet-text">被点赞收藏的关键帖子，隐藏伏笔</div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<script>
+// 获取所有标签和面板
+const tabs = document.querySelectorAll('.tab-item');
+const panels = document.querySelectorAll('.tab-panel');
+
+tabs.forEach(tab => {
+    tab.onclick = function(){
+        // 清空所有激活样式
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('show'));
+        // 当前标签激活
+        this.classList.add('active');
+        // 对应面板显示
+        const targetId = this.getAttribute('data-tab');
+        document.getElementById(targetId).classList.add('show');
+    }
+})
+</script>
 </body>
 </html>

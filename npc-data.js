@@ -1,4 +1,4 @@
-// ====================== NPC全局共用素材库 扩充完整版 ======================
+// ====================== NPC全局共用素材库 扩充完整版【按需修改版】 ======================
 // 规则说明：
 // 1. 带@Message_WhatIf 会自动渲染蓝色可点击艾特，跳转玩家主页home.html
 // 2. imgType: 0=使用你本地images内batman/supergirl图片；1=外网图片无需上传
@@ -12,7 +12,7 @@ const NPC_DATA = {
         "zy.png","user.jpg"
     ],
 
-    // NPC个人主页信息池
+    // NPC个人主页信息池【主页不再从此处读取昵称ID头像，仅保留供其他模块备用】
     userPool: [
         {n:"夜巡观察员",id:"@GothamNightWatch",bio:"常年蹲守哥谭楼顶，记录黑夜异动"},
         {n:"都市小报记者",id:"@MetroPaper",bio:"深挖各类都市传闻与神秘目击"},
@@ -242,11 +242,16 @@ function randOne(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// 随机截取数组不重复N项
+// 随机截取数组不重复N项【修改：随机数量1~9张】
 function randomNoRepeat(arr, num) {
+    // 强制随机取 1 ~ 9 之间的数量
+    let pickNum = Math.floor(Math.random() * 9) + 1;
+    // 不能超过数组总长度
+    pickNum = Math.min(pickNum, arr.length);
+
     let tmp = [...arr];
     let res = [];
-    for (let i = 0; i < num && tmp.length; i++) {
+    for (let i = 0; i < pickNum && tmp.length; i++) {
         let idx = Math.floor(Math.random() * tmp.length);
         res.push(tmp.splice(idx, 1)[0]);
     }

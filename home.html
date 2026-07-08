@@ -20,6 +20,10 @@ body{
     border-right:1px solid #333;
     min-height:100vh;
 }
+a{
+    color:inherit;
+    text-decoration:none;
+}
 /* 顶部个人信息栏 */
 .profile-header{
     padding:16px;
@@ -73,12 +77,16 @@ body{
     overflow-y:auto;
     height:calc(100vh - 240px);
 }
-/* 单条推文卡片 */
+/* 单条推文卡片 整块可点击 */
 .tweet-card{
     padding:14px 16px;
     border-bottom:1px solid #333;
     display:flex;
     gap:12px;
+    cursor:pointer;
+}
+.tweet-card:hover{
+    background:#151515;
 }
 .tweet-avatar{
     width:48px;
@@ -117,11 +125,14 @@ body{
 </style>
 </head>
 <body>
-<!-- 个人资料头部 -->
+<!-- 个人资料头部 头像+名字可点进自己主页 -->
 <div class="profile-header">
-    <div class="avatar"></div>
-    <div class="username">你的账号名</div>
-    <div class="user-id">@userid123</div>
+    <a href="home.html">
+        <div class="avatar"></div>
+    </a>
+    <a href="home.html" class="username">你的账号名</a>
+    <br>
+    <a href="home.html" class="user-id">@userid123</a>
     <p>这里写个人简介，仿X主页简介文案</p>
 </div>
 
@@ -137,84 +148,102 @@ body{
 <div class="feed-box">
     <!-- 帖子面板 -->
     <div class="tab-panel show" id="post">
-        <div class="tweet-card">
-            <div class="tweet-avatar"></div>
+        <!-- 第一条 整卡片点击跳帖子详情；头像/昵称点进访客A主页 -->
+        <a href="detail1.html" class="tweet-card">
+            <div>
+                <a href="userA.html">
+                    <div class="tweet-avatar"></div>
+                </a>
+            </div>
             <div class="tweet-content">
                 <div class="tweet-name-row">
-                    <span class="tweet-name">访客A</span>
+                    <a href="userA.html" class="tweet-name">访客A</a>
                     <span class="tweet-tag">@guest001 · 1小时</span>
                 </div>
                 <div class="tweet-text">第一条留言内容，你可以在这里填充剧情线索、伏笔文字</div>
             </div>
-        </div>
-        <div class="tweet-card">
-            <div class="tweet-avatar"></div>
+        </a>
+
+        <a href="detail2.html" class="tweet-card">
+            <div>
+                <a href="userB.html">
+                    <div class="tweet-avatar"></div>
+                </a>
+            </div>
             <div class="tweet-content">
                 <div class="tweet-name-row">
-                    <span class="tweet-name">访客B</span>
+                    <a href="userB.html" class="tweet-name">访客B</a>
                     <span class="tweet-tag">@guest002 · 3小时</span>
                 </div>
                 <div class="tweet-text">第二条留言，埋藏解谜关键信息，和主页面线索呼应</div>
             </div>
-        </div>
+        </a>
     </div>
 
     <!-- 回复面板 -->
     <div class="tab-panel" id="reply">
-        <div class="tweet-card">
-            <div class="tweet-avatar"></div>
+        <a href="reply1.html" class="tweet-card">
+            <div>
+                <a href="userC.html">
+                    <div class="tweet-avatar"></div>
+                </a>
+            </div>
             <div class="tweet-content">
                 <div class="tweet-name-row">
-                    <span class="tweet-name">访客C</span>
+                    <a href="userC.html" class="tweet-name">访客C</a>
                     <span class="tweet-tag">@guest003 · 半天</span>
                 </div>
                 <div class="tweet-text">这条是回复内容，可以放互动对话类线索</div>
             </div>
-        </div>
+        </a>
     </div>
 
     <!-- 媒体面板 -->
     <div class="tab-panel" id="media">
-        <div class="tweet-card">
-            <div class="tweet-avatar"></div>
+        <a href="media1.html" class="tweet-card">
+            <div>
+                <a href="mediaUser.html">
+                    <div class="tweet-avatar"></div>
+                </a>
+            </div>
             <div class="tweet-content">
                 <div class="tweet-name-row">
-                    <span class="tweet-name">系统上传</span>
+                    <a href="mediaUser.html" class="tweet-name">系统上传</a>
                     <span class="tweet-tag">@media · 2天</span>
                 </div>
                 <div class="tweet-text">此处可以插入图片、照片类线索</div>
             </div>
-        </div>
+        </a>
     </div>
 
     <!-- 喜欢面板 -->
     <div class="tab-panel" id="like">
-        <div class="tweet-card">
-            <div class="tweet-avatar"></div>
+        <a href="like1.html" class="tweet-card">
+            <div>
+                <a href="otherUser.html">
+                    <div class="tweet-avatar"></div>
+                </a>
+            </div>
             <div class="tweet-content">
                 <div class="tweet-name-row">
-                    <span class="tweet-name">他人帖子</span>
+                    <a href="otherUser.html" class="tweet-name">他人帖子</a>
                     <span class="tweet-tag">@other · 4天</span>
                 </div>
                 <div class="tweet-text">被点赞收藏的关键帖子，隐藏伏笔</div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 
 <script>
-// 获取所有标签和面板
+// 标签页切换
 const tabs = document.querySelectorAll('.tab-item');
 const panels = document.querySelectorAll('.tab-panel');
-
 tabs.forEach(tab => {
     tab.onclick = function(){
-        // 清空所有激活样式
         tabs.forEach(t => t.classList.remove('active'));
         panels.forEach(p => p.classList.remove('show'));
-        // 当前标签激活
         this.classList.add('active');
-        // 对应面板显示
         const targetId = this.getAttribute('data-tab');
         document.getElementById(targetId).classList.add('show');
     }

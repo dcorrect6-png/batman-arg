@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帖子详情</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:#fff;
+    max-width:600px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    padding:16px;
+}
+.back{
+    display:inline-block;
+    color:#1d9bf0;
+    text-decoration:none;
+    margin-bottom:20px;
+    font-size:18px;
+}
+.main-post{
+    padding-bottom:24px;
+    border-bottom:1px solid #eee;
+    margin-bottom:20px;
+}
+.comment-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+.comment-item .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+.comment-item .info {
+    flex: 1;
+}
+.comment-item .name {
+    font-weight: bold;
+    cursor: pointer;
+}
+.comment-item .tag {
+    color: #888;
+    font-size: 13px;
+    margin-left: 6px;
+}
+.comment-item .content {
+    margin-top: 6px;
+    line-height: 1.55;
+    color: #333;
+    word-break: break-all;
+}
+</style>
+</head>
+<body>
+<a href="home.html" class="back">← 返回首页</a>
+<div class="main-post">
+    <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/supergirl (2).jpg') center/cover;width:48px;height:48px;border-radius:50%;float:left;"></div>
+    <div style="margin-left:64px;">
+        <div class="tweet-name-row">
+            <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+            <span class="tweet-tag">@Message_WhatIf · 5天前</span>
+        </div>
+        <div class="tweet-text" style="margin-top:8px;">
+            并非表面
+            <br>
+            <img src="images/supergirl (2).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+        </div>
+    </div>
+</div>
+
+<div class="comment-item">
+    <div class="avatar" onclick="location.href='userG.html'" style="background:url('images/default.jpg') center/cover;"></div>
+    <div class="info">
+        <div class="name" onclick="location.href='userG.html'">雾岛听风</div>
+        <div class="tag">@Wind_Fog · 120小时前</div>
+        <div class="content">构图好绝，光影处理得特别细腻。</div>
+    </div>
+</div>
+
+<div class="comment-item">
+    <div class="avatar" onclick="location.href='userH.html'" style="background:url('images/default.jpg') center/cover;"></div>
+    <div class="info">
+        <div class="name" onclick="location.href='userH.html'">芝士小方</div>
+        <div class="tag">@Cheese_Square · 117小时前</div>
+        <div class="content">这句话文案写得很有深意，慢慢品能读出很多感觉。</div>
+    </div>
+</div>
+
+<div class="comment-item">
+    <div class="avatar" onclick="location.href='userI.html'" style="background:url('images/default.jpg') center/cover;"></div>
+    <div class="info">
+        <div class="name" onclick="location.href='userI.html'">晚风借纸笔</div>
+        <div class="tag">@Pen_Wind · 114小时前</div>
+        <div class="content">收藏了，打算之后做手账配图用。</div>
+    </div>
+</div>
+
+<div class="comment-item">
+    <div class="avatar" onclick="location.href='userJ.html'" style="background:url('images/default.jpg') center/cover;"></div>
+    <div class="info">
+        <div class="name" onclick="location.href='userJ.html'">通勤赶路ing</div>
+        <div class="tag">@Work_Rush · 111小时前</div>
+        <div class="content">每天忙完琐事刷到博主动态，算是一天里小小的慰藉。</div>
+    </div>
+</div>
+
+<div class="comment-item">
+    <div class="avatar" onclick="location.href='userK.html'" style="background:url('images/default.jpg') center/cover;"></div>
+    <div class="info">
+        <div class="name" onclick="location.href='userK.html'">山野来信</div>
+        <div class="tag">@Letter_Hill · 108小时前</div>
+        <div class="content">色调温柔又有力量，很喜欢这种不刻意的氛围感。</div>
+    </div>
+</div>
+
+<div class="comment-item">
+    <div class="avatar" onclick="location.href='userL.html'" style="background:url('images/default.jpg') center/cover;"></div>
+    <div class="info">
+        <div class="name" onclick="location.href='userL.html'">熬夜码字中</div>
+        <div class="tag">@Write_Late · 105小时前</div>
+        <div class="content">灵感突然被戳中，打算顺着这个感觉写一段短文。</div>
+    </div>
+</div>
+</body>
+</html>

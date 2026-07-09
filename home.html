@@ -268,52 +268,8 @@ a{
 </div>
 
 <script>
-// 所有私信数据源，新增hours字段，days代表天数，hours代表当天内偏移小时
+// 手动固定从上到下展示顺序，最新消息置顶，删除自动排序避免错乱
 const msgList = [
-    {
-        link: "msg1.html",
-        userPage: "npc.html",
-        avatar: "images/user (10).jpg",
-        name: "一般路过大都会",
-        tag: "@contact",
-        timeText: "3天",
-        days: 3,
-        hours: 0,
-        content: "别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的"
-    },
-    {
-        link: "msg2.html",
-        userPage: "npc.html",
-        avatar: "images/zy.png",
-        name: "L.D.F",
-        tag: "@LoveDeathstrokeForever",
-        timeText: "2天",
-        days: 2,
-        hours: 0,
-        content: "有见过丧钟吗"
-    },
-    {
-        link: "msg3.html",
-        userPage: "npc.html",
-        avatar: "images/12.jpg",
-        name: "TheOnlyBurgerGuy",
-        tag: "@BurgerVendor01",
-        timeText: "5天",
-        days: 5,
-        hours: 0,
-        content: "（粗口）"
-    },
-    {
-        "link": "msg4.html",
-        "userPage": "new.html",
-        "avatar": "images/drake.jpg",
-        "name": "UHGURELQ",
-        "tag": "@youneverfindme",
-        "timeText": "9小时",
-        "days": 0,
-        "hours": 9,
-        "content": "你还在吗？"
-    },
     {
         "link": "msgLK.html",
         "userPage": "LK.html",
@@ -347,14 +303,51 @@ const msgList = [
         "hours": 6.5,
         "content": "不是蝙蝠，不是夜翼，也不是那个红罗宾..."
     },
+    {
+        "link": "msg4.html",
+        "userPage": "new.html",
+        "avatar": "images/drake.jpg",
+        "name": "UHGURELQ",
+        "tag": "@youneverfindme",
+        "timeText": "9小时",
+        "days": 0,
+        "hours": 9,
+        "content": "你还在吗？"
+    },
+    {
+        link: "msg2.html",
+        userPage: "npc.html",
+        avatar: "images/zy.png",
+        name: "L.D.F",
+        tag: "@LoveDeathstrokeForever",
+        timeText: "2天",
+        days: 2,
+        hours: 0,
+        content: "有见过丧钟吗"
+    },
+    {
+        link: "msg1.html",
+        userPage: "npc.html",
+        avatar: "images/user (10).jpg",
+        name: "一般路过大都会",
+        tag: "@contact",
+        timeText: "3天",
+        days: 3,
+        hours: 0,
+        content: "别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的"
+    },
+    {
+        link: "msg3.html",
+        userPage: "npc.html",
+        avatar: "images/12.jpg",
+        name: "TheOnlyBurgerGuy",
+        tag: "@BurgerVendor01",
+        timeText": "5天",
+        days: 5,
+        hours: 0,
+        content: "（粗口）"
+    },
 ];
-
-// 按总小时数排序：总时长越小消息越新，排在上方
-msgList.sort((a, b) => {
-    const totalHourA = a.days * 24 + a.hours;
-    const totalHourB = b.days * 24 + b.hours;
-    return totalHourA - totalHourB;
-});
 
 // 渲染私信列表
 function renderMsg() {
@@ -378,7 +371,6 @@ function renderMsg() {
     });
     wrap.innerHTML = html;
 }
-// 等待DOM完全加载完毕再执行渲染，杜绝获取不到元素
 window.onload = renderMsg;
 </script>
 

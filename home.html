@@ -128,6 +128,7 @@ a{
 </head>
 <body>
     <a onclick="location.href='index.html'" style="display:inline-block;color:#990000;text-decoration:none;font-size:18px;padding:12px 16px;">← 返回</a>
+
 <!-- 个人资料头部 头像+名字可点进自己主页 -->
 <div class="profile-header">
     <a href="home.html">
@@ -139,116 +140,118 @@ a{
     <p>20↑|Focus on my private|sharing Batman or other superhero/superheroine</p>
 </div>
 
-<!-- Tab栏：喜欢 → 私信（通讯） -->
+<!-- Tab栏：帖子 → 回复 → 媒体 → 通讯 -->
 <div class="tab-wrap">
     <div class="tab-item active" data-tab="post">帖子</div>
-  <div class="tab-item" data-tab="reply" style="color:#bbbbbb;">回复</div>
-<div class="tab-item" data-tab="media" style="color:#bbbbbb;">媒体</div>
+    <div class="tab-item" data-tab="reply" style="color:#bbbbbb;">回复</div>
+    <div class="tab-item" data-tab="media" style="color:#bbbbbb;">媒体</div>
     <div class="tab-item" data-tab="message">通讯</div>
 </div>
-<!-- 可上下滑动信息流区域 -->
+
+<!-- 帖子区域 -->
 <div class="feed-box">
-    <!-- 帖子面板 所有帖子全部包裹在此标签内 -->
-<div class="tab-panel show" id="post">
-    <div onclick="location.href='detail1.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
-                <span class="tweet-tag">@Message_WhatIf · 12小时</span>
+    <div class="tab-panel show" id="post">
+        <div onclick="location.href='detail1.html'" class="tweet-card">
+            <div>
+                <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
             </div>
-            <div class="tweet-text">我说最近蝙蝠侠是不是换人了啊（doge）</div>
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+                    <span class="tweet-tag">@Message_WhatIf · 12小时</span>
+                </div>
+                <div class="tweet-text">我说最近蝙蝠侠是不是换人了啊（doge）</div>
+            </div>
         </div>
-    </div>
 
-    <div onclick="location.href='detail2.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
-                <span class="tweet-tag">@Message_WhatIf · 一天</span>
+        <div onclick="location.href='detail2.html'" class="tweet-card">
+            <div>
+                <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
             </div>
-            <div class="tweet-text">
-                我加了滤镜
-                <br>
-                <img src="images/batman (2).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+                    <span class="tweet-tag">@Message_WhatIf · 一天</span>
+                </div>
+                <div class="tweet-text">
+                    我加了滤镜
+                    <br>
+                    <img src="images/batman (2).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+                </div>
             </div>
         </div>
-    </div>
 
-    <div onclick="location.href='detail3.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
-                <span class="tweet-tag">@Message_WhatIf · 三天</span>
+        <div onclick="location.href='detail3.html'" class="tweet-card">
+            <div>
+                <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
             </div>
-            <div class="tweet-text">
-                Dark Hero
-                <br>
-                <img src="images/batman (1).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+                    <span class="tweet-tag">@Message_WhatIf · 三天</span>
+                </div>
+                <div class="tweet-text">
+                    Dark Hero
+                    <br>
+                    <img src="images/batman (1).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 5天前帖子 detail5 -->
-    <div onclick="location.href='detail5.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
-                <span class="tweet-tag">@Message_WhatIf · 5天前</span>
+        <!-- 5天前帖子 detail5 -->
+        <div onclick="location.href='detail5.html'" class="tweet-card">
+            <div>
+                <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
             </div>
-            <div class="tweet-text">
-                并非表面
-                <br>
-                <img src="images/supergirl (2).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+                    <span class="tweet-tag">@Message_WhatIf · 5天前</span>
+                </div>
+                <div class="tweet-text">
+                    并非表面
+                    <br>
+                    <img src="images/supergirl (2).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- 7天前帖子 detail4 -->
-    <div onclick="location.href='detail4.html'" class="tweet-card">
-        <div>
-            <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
-        </div>
-        <div class="tweet-content">
-            <div class="tweet-name-row">
-                <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
-                <span class="tweet-tag">@Message_WhatIf · 7天前</span>
+        <!-- 7天前帖子 detail4 -->
+        <div onclick="location.href='detail4.html'" class="tweet-card">
+            <div>
+                <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/user.jpg') center/cover;"></div>
             </div>
-            <div class="tweet-text">
-                她。她们。我们
-                <br>
-                <img src="images/supergirl (1).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+            <div class="tweet-content">
+                <div class="tweet-name-row">
+                    <span onclick="event.stopPropagation();location.href='home.html'" class="tweet-name">WhatIF</span>
+                    <span class="tweet-tag">@Message_WhatIf · 7天前</span>
+                </div>
+                <div class="tweet-text">
+                    她。她们。我们
+                    <br>
+                    <img src="images/supergirl (1).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- 回复面板 -->
-<div class="tab-panel" id="reply">
-    <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
+    <div class="tab-panel" id="reply">
+        <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
 因账号风控限制，回复功能暂未开放，无法查看与发布内容
+        </div>
     </div>
-</div>
 
- <!-- 媒体面板 -->
-<div class="tab-panel" id="media">
-    <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
+    <!-- 媒体面板 -->
+    <div class="tab-panel" id="media">
+        <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
 因账号风控限制，媒体功能暂未开放，无法查看相册与素材
+        </div>
     </div>
 </div>
+<!-- feed-box 正确闭合 -->
 
-    <!-- 原喜欢栏改为 私信（通讯）面板 -->
+<!-- 通讯面板 放到feed-box外部，DOM层级正确 -->
 <div class="tab-panel" id="message">
     <!-- 系统置顶公告 -->
     <div style="padding:14px 16px;border-bottom:1px solid #eee;background:#f8f8f8;">
@@ -262,31 +265,32 @@ a{
             </div>
         </div>
     </div>
-
     <div id="msgContainer"></div>
 </div>
 
 <script>
-// 所有私信数据源，只需要填写数字days（越小越新，排在最上面）
+// 所有私信数据源，新增hours字段，days代表天数，hours代表当天内偏移小时
 const msgList = [
     {
         link: "msg1.html",
-        userPage: "npc.html", // 本条改为NPC统一跳转
+        userPage: "npc.html",
         avatar: "images/user (10).jpg",
         name: "一般路过大都会",
         tag: "@contact",
         timeText: "3天",
         days: 3,
+        hours: 0,
         content: "别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的"
     },
     {
         link: "msg2.html",
-        userPage: "npc.html", // 本条原本就是NPC跳转，保持不变
+        userPage: "npc.html",
         avatar: "images/zy.png",
         name: "L.D.F",
         tag: "@LoveDeathstrokeForever",
         timeText: "2天",
         days: 2,
+        hours: 0,
         content: "有见过丧钟吗"
     },
     {
@@ -297,54 +301,63 @@ const msgList = [
         tag: "@BurgerVendor01",
         timeText: "5天",
         days: 5,
+        hours: 0,
         content: "（粗口）"
     },
     {
-    "link": "msg4.html",
-    "userPage": "new.html",
-    "avatar": "images/drake.jpg",
-    "name": "UHGURELQ",
-    "tag": "@youneverfindme",
-    "timeText": "9小时",
-    "days": 1,
-    "content": "你还在吗？"
-},
-     {
-    "link": "msgLK.html",
-    "userPage": "LK.html",
-    "avatar": "images/LK.jpg",
-    "name": "LK411",
-    "tag": "@The_Creator",
-    "timeText": "1分钟",
-    "days": 0,
-    "content": "（陌生人消息）"
-},
-     {
-    "link": "msglien.html",
-    "userPage": "npc.html",
-    "avatar": "images/lien.jpg",
-    "name": "LCorp_媒体公关部",
-    "tag": "@LexCorp_MediaAcq",
-    "timeText": "6小时",
-    "days": 2,
-    "content": "附件：保密合同草案.doc"
-},
-     {
-    "link": "msgt.html",
-    "userPage": "npc.html",
-    "avatar": "images/t.jpg",
-    "name": "GuessWhat",
-    "tag": "@RiddleMeThis",
-    "timeText": "6小时",
-    "days": 1.5,
-    "content": "不是蝙蝠，不是夜翼，也不是那个红罗宾..."
-},
+        "link": "msg4.html",
+        "userPage": "new.html",
+        "avatar": "images/drake.jpg",
+        "name": "UHGURELQ",
+        "tag": "@youneverfindme",
+        "timeText": "9小时",
+        "days": 0,
+        "hours": 9,
+        "content": "你还在吗？"
+    },
+    {
+        "link": "msgLK.html",
+        "userPage": "LK.html",
+        "avatar": "images/LK.jpg",
+        "name": "LK411",
+        "tag": "@The_Creator",
+        "timeText": "1分钟",
+        "days": 0,
+        "hours": 0,
+        "content": "（陌生人消息）"
+    },
+    {
+        "link": "msglien.html",
+        "userPage": "npc.html",
+        "avatar": "images/lien.jpg",
+        "name": "LCorp_媒体公关部",
+        "tag": "@LexCorp_MediaAcq",
+        "timeText": "6小时",
+        "days": 0,
+        "hours": 6,
+        "content": "附件：保密合同草案.doc"
+    },
+    {
+        "link": "msgt.html",
+        "userPage": "npc.html",
+        "avatar": "images/t.jpg",
+        "name": "GuessWhat",
+        "tag": "@RiddleMeThis",
+        "timeText": "6小时",
+        "days": 1,
+        "hours": 12,
+        "content": "不是蝙蝠，不是夜翼，也不是那个红罗宾..."
+    },
 ];
 
-// 按days升序排序：天数数字越小 → 越新 → 越靠前
-msgList.sort((a, b) => a.days - b.days);
+// 按总小时数排序：总时长越小消息越新，排在上方
+msgList.sort((a, b) => {
+    const totalHourA = a.days * 24 + a.hours;
+    const totalHourB = b.days * 24 + b.hours;
+    return totalHourA - totalHourB;
+});
 
-// 渲染列表
+// 渲染私信列表
 function renderMsg() {
     const wrap = document.getElementById("msgContainer");
     let html = "";
@@ -369,10 +382,8 @@ function renderMsg() {
 renderMsg();
 </script>
 
-</div>
-
 <script>
-// 标签页切换逻辑同步修改对应ID
+// 标签页切换逻辑
 const tabs = document.querySelectorAll('.tab-item');
 const panels = document.querySelectorAll('.tab-panel');
 tabs.forEach(tab => {
@@ -385,5 +396,6 @@ tabs.forEach(tab => {
     }
 })
 </script>
+
 </body>
 </html>

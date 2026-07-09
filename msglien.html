@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私信对话</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    max-width:600px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+.back{
+    padding:12px 16px;
+    font-size:18px;
+    color:#1d9bf0;
+    text-decoration:none;
+    display:block;
+}
+.head{
+    padding:14px 16px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+.ava{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:url("images/lien.jpg") center/cover;
+    cursor:pointer;
+}
+.info .n{
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+.info .id{
+    font-size:13px;
+    color:#777;
+}
+.box{
+    flex:1;
+    padding:16px;
+}
+/* 对方发来的消息 灰色左气泡 */
+.other{
+    background:#f1f1f1;
+    padding:10px 12px;
+    border-radius:12px 12px 12px 4px;
+    max-width:85%;
+    margin-bottom:12px;
+    line-height:1.6;
+    white-space:pre-line;
+}
+/* 玩家自己发送的消息 蓝色右气泡 */
+.me{
+    margin-left:auto;
+    background:#1d9bf0;
+    color:#fff;
+    padding:10px 12px;
+    border-radius:12px 12px 4px 12px;
+    max-width:85%;
+    margin-bottom:12px;
+    text-align:right;
+    white-space:pre-line;
+}
+.time-divider{
+    text-align:center;
+    color:#aaa;
+    font-size:14px;
+    margin:16px 0;
+}
+</style>
+</head>
+<body>
+<!-- 返回：玩家通讯消息列表页 home.html#message -->
+<a class="back" href="home.html#message">←</a>
+
+<div class="head">
+    <!-- 头像点击跳转对方主页 new.html -->
+    <div class="ava" onclick="location.href='npc.html'"></div>
+    <div class="info">
+        <div class="n" onclick="location.href='npc.html'">LCorp_媒体公关部</div>
+        <div class="id">@LexCorp_MediaAcq</div>
+    </div>
+</div>
+
+<div class="box">
+  <div class="time-divider">6小时前</div>
+    <!-- 对方第一条 -->
+    <div class="other">尊敬的@Message_WhatIf，我方代表莱克斯集团媒体公关部门，诚意收购您近三周内的所有超人高清影像（包含未公开素材及底片）报价将会是大都会普通报社平均收购价格的200%。
+      另：若您拍到的画面中有以下情况，包括但不限于：超人受到明显伤害/有关超人超能力的清晰展现等，价格翻倍。
+      此外，您的影像仅用于“科学研究”，您的身份信息同样会得到安全保密措施，望您慎重考虑我们的提议。期待您的回复。
+</div>
+     <div class="other">附件：保密合同草案.doc</div>
+</div>
+</body>
+</html>

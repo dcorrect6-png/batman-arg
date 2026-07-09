@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BATARG</title>
+<script src="keywordList.js"></script>
 <style>
 *{
     margin: 0;
@@ -169,13 +170,6 @@ function showTip(msg) {
     box.style.display = 'block';
 }
 
-// 关键词跳转映射表
-const keywordJump = {
-    "蝙蝠侠": "batman.html",
-    "换人": "change.html",
-    "帖子": "post.html"
-};
-
 const inputDom = document.getElementById('search-input');
 const btnDom = document.getElementById('explore-btn');
 
@@ -189,7 +183,7 @@ btnDom.onclick = function(){
     if(keywordJump.hasOwnProperty(word)){
         window.location.href = keywordJump[word];
     }else{
-        // 按照你需求：无匹配弹窗固定文案【此内容没有什么好看的】
+        // 按照你需求：无匹配弹窗固定文案
         showTip("你看了一圈，刷了会手机，刚才看了什么？");
     }
 }

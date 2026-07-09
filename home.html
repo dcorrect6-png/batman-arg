@@ -148,7 +148,7 @@ a{
     <div class="tab-item" data-tab="message">通讯</div>
 </div>
 
-<!-- 帖子区域 -->
+<!-- 全部四个面板统一放进feed-box，结构完全规范，不会层级错乱 -->
 <div class="feed-box">
     <div class="tab-panel show" id="post">
         <div onclick="location.href='detail1.html'" class="tweet-card">
@@ -248,24 +248,23 @@ a{
 因账号风控限制，媒体功能暂未开放，无法查看相册与素材
         </div>
     </div>
-</div>
-<!-- feed-box 正确闭合 -->
 
-<!-- 通讯面板 放到feed-box外部，DOM层级正确 -->
-<div class="tab-panel" id="message">
-    <!-- 系统置顶公告 -->
-    <div style="padding:14px 16px;border-bottom:1px solid #eee;background:#f8f8f8;">
-        <div style="display:flex;gap:12px;">
-            <div style="width:48px;height:48px;border-radius:50%;background:#1d9bf0;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">系</div>
-            <div style="flex:1;">
-                <div style="font-weight:bold;margin-bottom:4px;">系统官方通知 <span style="font-size:12px;color:#777;">【置顶】</span></div>
-                <div style="font-size:14px;color:#333;line-height:1.5;">
-                   由于你的账号有风险，目前暂时无法回复其他人。如有疑问可到官方进行邮件。
+    <!-- 通讯面板 移入feed-box内部，层级完全统一 -->
+    <div class="tab-panel" id="message">
+        <!-- 系统置顶公告 -->
+        <div style="padding:14px 16px;border-bottom:1px solid #eee;background:#f8f8f8;">
+            <div style="display:flex;gap:12px;">
+                <div style="width:48px;height:48px;border-radius:50%;background:#1d9bf0;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:bold;">系</div>
+                <div style="flex:1;">
+                    <div style="font-weight:bold;margin-bottom:4px;">系统官方通知 <span style="font-size:12px;color:#777;">【置顶】</span></div>
+                    <div style="font-size:14px;color:#333;line-height:1.5;">
+                       由于你的账号有风险，目前暂时无法回复其他人。如有疑问可到官方进行邮件。
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="msgContainer"></div>
     </div>
-    <div id="msgContainer"></div>
 </div>
 
 <script>
@@ -379,8 +378,8 @@ function renderMsg() {
     });
     wrap.innerHTML = html;
 }
-renderMsg();
-
+// 等待DOM完全加载完毕再执行渲染，杜绝获取不到元素
+window.onload = renderMsg;
 </script>
 
 <script>

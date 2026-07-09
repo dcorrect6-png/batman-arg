@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>往期任务消息面板</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    background:#111;
+    padding:40px 20px;
+    max-width:650px;
+    margin:0 auto;
+}
+.back{
+    color:#74b9ff;
+    text-decoration:none;
+    margin-bottom:30px;
+    display:inline-block;
+}
+.title{
+    color:#fff;
+    font-size:22px;
+    margin-bottom:35px;
+    text-align:center;
+}
+/* 单条手机推送消息卡片 */
+.msg-card{
+    background:#1f1f1f;
+    border:1px solid #333;
+    border-radius:16px;
+    padding:18px;
+    margin-bottom:16px;
+}
+.msg-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+}
+.msg-name{
+    color:#ccc;
+    font-size:14px;
+}
+.msg-time{
+    color:#888;
+    font-size:12px;
+}
+.msg-text{
+    color:#eee;
+    font-size:15px;
+    line-height:1.6;
+}
+</style>
+</head>
+<body>
+<a class="back" href="javascript:history.back()">← 返回</a>
+<div class="title">往期消息通知</div>
+
+<!-- 第一条：最新 -->
+<div class="msg-card">
+    <div class="msg-top">
+        <span class="msg-name">LK411</span>
+        <span class="msg-time">最早</span>
+    </div>
+    <div class="msg-text">身份问题：破解他的谜题</div>
+</div>
+
+<!-- 第二条 -->
+<div class="msg-card">
+    <div class="msg-top">
+        <span class="msg-name">未知</span>
+        <span class="msg-time">最晚</span>
+    </div>
+    <div class="msg-text">支线1：你是谁</div>
+</div>
+
+<!-- 越往下写，代表消息越早、越旧 -->
+
+</body>
+</html>

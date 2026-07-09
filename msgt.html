@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私信对话</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    max-width:600px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+.back{
+    padding:12px 16px;
+    font-size:18px;
+    color:#1d9bf0;
+    text-decoration:none;
+    display:block;
+}
+.head{
+    padding:14px 16px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+.ava{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:url("images/t.jpg") center/cover;
+    cursor:pointer;
+}
+.info .n{
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+.info .id{
+    font-size:13px;
+    color:#777;
+}
+.box{
+    flex:1;
+    padding:16px;
+}
+/* 对方发来的消息 灰色左气泡 */
+.other{
+    background:#f1f1f1;
+    padding:10px 12px;
+    border-radius:12px 12px 12px 4px;
+    max-width:85%;
+    margin-bottom:12px;
+    line-height:1.6;
+    white-space:pre-line;
+}
+/* 玩家自己发送的消息 蓝色右气泡 */
+.me{
+    margin-left:auto;
+    background:#1d9bf0;
+    color:#fff;
+    padding:10px 12px;
+    border-radius:12px 12px 4px 12px;
+    max-width:85%;
+    margin-bottom:12px;
+    text-align:right;
+    white-space:pre-line;
+}
+.time-divider{
+    text-align:center;
+    color:#aaa;
+    font-size:14px;
+    margin:16px 0;
+}
+</style>
+</head>
+<body>
+<!-- 返回：玩家通讯消息列表页 home.html#message -->
+<a class="back" href="home.html#message">←</a>
+
+<div class="head">
+    <!-- 头像点击跳转对方主页 new.html -->
+    <div class="ava" onclick="location.href='npc.html'"></div>
+    <div class="info">
+        <div class="n" onclick="location.href='npc.html'">GuessWhat</div>
+        <div class="id">@RiddleMeThis</div>
+    </div>
+</div>
+
+<div class="box">
+  <div class="time-divider">6小时前</div>
+    <!-- 对方第一条 -->
+    <div class="other">我注意你的“记录”有一阵子了——所以，我不绕弯子。</div>
+     <div class="other">前几天我在钻石区拍到了一件很有趣的事：一个穿着皮夹克、顶着红色铁桶的男人，从消防梯上跳下来，落地声音比猫还轻。
+       他揍趴了几个明显带着“军火贩子常用工具箱”的小混混，然后拿走了一个数据板。全程没抬头。
+       但就在他转身的瞬间，他那反光的铁桶脑袋精准地闪了我相机的镜头——故意的——或像故意的。
+       这个人不在你的“常规英雄列表”里，对吗？</div>
+     <div class="other">不是蝙蝠，不是夜翼，也不是那个红罗宾。
+       我想，我们可能在找同一条线索。或者说，同一种“变量”。</div>
+</div>
+</body>
+</html>

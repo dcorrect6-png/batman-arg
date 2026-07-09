@@ -268,6 +268,7 @@ a{
 </div>
 
 <script>
+// 数据固定不变
 const msgList = [
     {
         "link": "msgLK.html",
@@ -330,10 +331,10 @@ const msgList = [
         avatar: "images/user (10).jpg",
         name: "一般路过大都会",
         tag: "@contact",
-        timeText: "3天",
+        timeText": "3天",
         days: 3,
         hours: 0,
-        content: "别这样嘛，当初蝙蝠侠来大都市不还是我抓拍的"
+        content: "别这样嘛，当初蝙蝠侠来大都市还是我抓拍的"
     },
     {
         link: "msg3.html",
@@ -348,12 +349,11 @@ const msgList = [
     },
 ];
 
-// 独立渲染函数
+// 渲染函数
 function renderMsg() {
     const wrap = document.getElementById("msgContainer");
     if (!wrap) return;
     let html = "";
-    // 按时间从小到大排序（新的在上）
     const arr = [...msgList].sort((a, b) => (a.days * 24 + a.hours) - (b.days * 24 + b.hours));
     arr.forEach(item => {
         html += `
@@ -373,27 +373,30 @@ function renderMsg() {
     wrap.innerHTML = html;
 }
 
-// 页面加载先执行一次
-window.onload = renderMsg;
+// 必须等页面DOM全部加载完毕再绑定点击事件
+document.addEventListener('DOMContentLoaded', function(){
+    // 初始加载渲染一次
+    renderMsg();
 
-// 标签页切换逻辑 + 切到通讯立刻渲染
-const tabs = document.querySelectorAll('.tab-item');
-const panels = document.querySelectorAll('.tab-panel');
-tabs.forEach(tab => {
-    tab.onclick = function(){
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('show'));
-        this.classList.add('active');
-        const targetId = this.getAttribute('data-tab');
-        const targetPanel = document.getElementById(targetId);
-        targetPanel.classList.add('show');
+    const tabs = document.querySelectorAll('.tab-item');
+    const panels = document.querySelectorAll('.tab-panel');
 
-        // 点击通讯标签，强制重新渲染列表
-        if(targetId === 'message'){
-            renderMsg();
+    tabs.forEach(tab => {
+        tab.onclick = function(){
+            tabs.forEach(t => t.classList.remove('active'));
+            panels.forEach(p => p.classList.remove('show'));
+            this.classList.add('active');
+            const targetId = this.getAttribute('data-tab');
+            const targetPanel = document.getElementById(targetId);
+            targetPanel.classList.add('show');
+
+            // 切通讯面板强制刷新渲染列表
+            if(targetId === 'message'){
+                renderMsg();
+            }
         }
-    }
-})
+    });
+});
 </script>
 
 </body>

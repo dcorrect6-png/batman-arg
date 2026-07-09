@@ -288,17 +288,17 @@ const msgList = [
         timeText: "2天",
         days: 2,
         content: "有见过丧钟吗"
-    }
+    },
     {
-    link: "msg3.html",
-    userPage: "npc.html",
-    avatar: "images/12.jpg",
-    name: "TheOnlyBurgerGuy",
-    tag: "@BurgerVendor01",
-    timeText: "5天",
-    days: 5,
-    content: "（粗口）"
-}
+        link: "msg3.html",
+        userPage: "npc.html",
+        avatar: "images/default.jpg",
+        name: "TheOnlyBurgerGuy",
+        tag: "@BurgerVendor01",
+        timeText: "5天",
+        days: 5,
+        content: "蝙蝠侠不见了吗？怎么可能\n前几天还看到蝙蝠侠光临汉堡摊呢，我的意思是，我的汉堡摊：）\n欢迎你来我的汉堡摊品尝蝙蝠侠同款汉堡，我们已经推出了蝙蝠侠套餐，两套九五折😉\n什么证明，没有证明，蝙蝠侠怎么可能让我拍到照片\n（粗口）"
+    }
 ];
 
 // 按days升序排序：天数数字越小 → 越新 → 越靠前
@@ -319,7 +319,7 @@ function renderMsg() {
             <span onclick="event.stopPropagation();location.href='${item.userPage}'" class="tweet-name">${item.name}</span>
             <span class="tweet-tag">${item.tag} · ${item.timeText}</span>
         </div>
-        <div class="tweet-text">${item.content}</div>
+        <div class="tweet-text" style="white-space:pre-line;">${item.content}</div>
     </div>
 </div>
         `;

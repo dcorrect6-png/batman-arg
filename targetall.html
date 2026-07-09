@@ -7,7 +7,8 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-    background:#111;
+    background:rgba(0,0,0,0.75); /* 半透明深色背景 */
+    min-height:100vh;
     padding:40px 20px;
     max-width:650px;
     margin:0 auto;
@@ -26,8 +27,8 @@ body{
 }
 /* 单条手机推送消息卡片 */
 .msg-card{
-    background:#1f1f1f;
-    border:1px solid #333;
+    background:#222222;
+    border:1px solid #444;
     border-radius:16px;
     padding:18px;
     margin-bottom:16px;
@@ -53,7 +54,8 @@ body{
 </style>
 </head>
 <body>
-<a class="back" href="javascript:history.back()">← 返回</a>
+<!-- 直接跳转到消息主页，不是回退历史记录 -->
+<a class="back" href="home.html#message">← 返回消息列表</a>
 <div class="title">往期消息通知</div>
 
 <!-- 第一条：最新 -->
@@ -73,8 +75,6 @@ body{
     </div>
     <div class="msg-text">支线1：你是谁</div>
 </div>
-
-<!-- 越往下写，代表消息越早、越旧 -->
 
 </body>
 </html>

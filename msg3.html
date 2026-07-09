@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>私信对话</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    max-width:600px;
+    margin:0 auto;
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+.back{
+    padding:12px 16px;
+    font-size:18px;
+    color:#1d9bf0;
+    text-decoration:none;
+    display:block;
+}
+.head{
+    padding:14px 16px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+.ava{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:url("images/default.jpg") center/cover;
+    cursor:pointer;
+}
+.info .n{
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+.info .id{
+    font-size:13px;
+    color:#777;
+}
+.box{
+    flex:1;
+    padding:16px;
+}
+.other{
+    background:#f1f1f1;
+    padding:10px 12px;
+    border-radius:12px 12px 12px 4px;
+    max-width:85%;
+    margin-bottom:12px;
+    line-height:1.6;
+    white-space:pre-line;
+}
+.me{
+    margin-left:auto;
+    background:#1d9bf0;
+    color:#fff;
+    padding:10px 12px;
+    border-radius:12px 12px 4px 12px;
+    max-width:85%;
+    margin-bottom:12px;
+    text-align:right;
+    white-space:pre-line;
+}
+</style>
+</head>
+<body>
+<a class="back" href="home.html#message">← 返回通讯列表</a>
+<div class="head">
+    <div class="ava" onclick="location.href='npc.html'"></div>
+    <div class="info">
+        <div class="n" onclick="location.href='npc.html'">TheOnlyBurgerGuy</div>
+        <div class="id">@BurgerVendor01</div>
+    </div>
+</div>
+<div class="box">
+    <div class="other">蝙蝠侠不见了吗？怎么可能
+前几天还看到蝙蝠侠光临汉堡摊呢，我的意思是，我的汉堡摊：）
+欢迎你来我的汉堡摊品尝蝙蝠侠同款汉堡，我们已经推出了蝙蝠侠套餐，两套九五折😉
+什么证明，没有证明，蝙蝠侠怎么可能让我拍到照片
+（粗口）</div>
+</div>
+</body>
+</html>

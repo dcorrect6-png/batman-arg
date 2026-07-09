@@ -159,7 +159,7 @@ p {
 </div>
 
 <script>
-// 仅定义弹窗函数，不获取DOM元素
+// 弹窗公共方法，全局统一调用，弹窗样式完全和页面原生弹窗一致
 function showTip(msg) {
     const mask = document.getElementById('mask');
     const box = document.getElementById('myAlert');
@@ -169,7 +169,7 @@ function showTip(msg) {
     box.style.display = 'block';
 }
 
-// 关键词跳转映射
+// 关键词跳转映射表
 const keywordJump = {
     "蝙蝠侠": "batman.html",
     "换人": "change.html",
@@ -179,21 +179,27 @@ const keywordJump = {
 const inputDom = document.getElementById('search-input');
 const btnDom = document.getElementById('explore-btn');
 
-// 检索按钮点击
+// 点击搜索按钮逻辑
 btnDom.onclick = function(){
     let word = inputDom.value.trim();
-    if(keywordJump[word]){
+    if (!word) {
+        showTip("请输入检索关键词");
+        return;
+    }
+    if(keywordJump.hasOwnProperty(word)){
         window.location.href = keywordJump[word];
     }else{
-        showTip("未检索到相关档案，请更换关键词");
+        // 按照你需求：无匹配弹窗固定文案【此内容没有什么好看的】
+        showTip("你看了一圈，刷了会手机，刚才看了什么？");
     }
 }
-// 检索回车
+
+// 输入框回车触发搜索
 inputDom.onkeydown = function(e){
     if(e.key === "Enter") btnDom.click();
 }
 
-// 警告次数初始化
+// 警告次数本地存储初始化
 if(!localStorage.getItem("warnCount")){
     localStorage.setItem("warnCount", 0);
 }
@@ -204,9 +210,13 @@ const batSubmitBtn = document.getElementById("bat-submit");
 const endPageUrl = "ending.html";
 const banPageUrl = "blank.html";
 
-// 提交按钮逻辑
+// 最终答案提交逻辑
 batSubmitBtn.onclick = function(){
     let userText = batInput.value.trim();
+    if(!userText){
+        showTip("请输入你的推理内容");
+        return;
+    }
     if(userText.includes("布鲁斯") && userText.includes("蝙蝠侠")){
         warnCount += 1;
         localStorage.setItem("warnCount", warnCount);
@@ -227,22 +237,24 @@ batSubmitBtn.onclick = function(){
                 location.href = banPageUrl;
                 break;
         }
+    } else {
+        showTip("当前推论暂未解锁后续剧情，可以继续搜集线索");
     }
 }
 
-// 提交输入框回车
+// 答案输入框回车提交
 batInput.onkeydown = function(e){
     if(e.key === "Enter") batSubmitBtn.click();
 }
 
-// 重置按钮逻辑
+// 重置按钮
 document.getElementById('resetBtn').onclick = function(){
     localStorage.removeItem('warnCount');
     showTip('警告次数已重置，页面即将刷新');
-    location.reload();
+    setTimeout(()=>location.reload(),1200);
 }
 
-// 最后绑定弹窗关闭事件（此时DOM已经完全加载完毕）
+// 弹窗关闭绑定
 document.getElementById('alertBtn').onclick = function(){
     document.getElementById('mask').style.display = 'none';
     document.getElementById('myAlert').style.display = 'none';

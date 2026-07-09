@@ -268,7 +268,6 @@ a{
 </div>
 
 <script>
-// 手动固定从上到下展示顺序，最新消息置顶，删除自动排序避免错乱
 const msgList = [
     {
         "link": "msgLK.html",
@@ -349,18 +348,14 @@ const msgList = [
     },
 ];
 
-// 渲染私信列表
+// 独立渲染函数
 function renderMsg() {
     const wrap = document.getElementById("msgContainer");
+    if (!wrap) return;
     let html = "";
-
-    const sortedList = [...msgList].sort((a, b) => {
-        const timeA = a.days * 24 + a.hours;
-        const timeB = b.days * 24 + b.hours;
-        return timeA - timeB;
-    });
-
-    sortedList.forEach(item => {
+    // 按时间从小到大排序（新的在上）
+    const arr = [...msgList].sort((a, b) => (a.days * 24 + a.hours) - (b.days * 24 + b.hours));
+    arr.forEach(item => {
         html += `
 <div onclick="location.href='${item.link}'" class="tweet-card">
     <div>
@@ -373,17 +368,15 @@ function renderMsg() {
         </div>
         <div class="tweet-text" style="white-space:pre-line;">${item.content}</div>
     </div>
-</div>
-        `;
+</div>`;
     });
-
     wrap.innerHTML = html;
 }
-window.onload = renderMsg;
-</script>
 
-<script>
-// 标签页切换逻辑
+// 页面加载先执行一次
+window.onload = renderMsg;
+
+// 标签页切换逻辑 + 切到通讯立刻渲染
 const tabs = document.querySelectorAll('.tab-item');
 const panels = document.querySelectorAll('.tab-panel');
 tabs.forEach(tab => {
@@ -392,7 +385,13 @@ tabs.forEach(tab => {
         panels.forEach(p => p.classList.remove('show'));
         this.classList.add('active');
         const targetId = this.getAttribute('data-tab');
-        document.getElementById(targetId).classList.add('show');
+        const targetPanel = document.getElementById(targetId);
+        targetPanel.classList.add('show');
+
+        // 点击通讯标签，强制重新渲染列表
+        if(targetId === 'message'){
+            renderMsg();
+        }
     }
 })
 </script>

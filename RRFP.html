@@ -144,12 +144,12 @@ a{
 <!-- 三栏均分：帖子、回复、媒体 -->
 <div class="tab-wrap">
     <div class="tab-item active" data-tab="post">帖子</div>
-    <div class="tab-item" data-tab="reply" style="color:#bbbbbb;">回复</div>
-    <div class="tab-item" data-tab="media" style="color:#bbbbbb;">媒体</div>
+    <div class="tab-item" data-tab="reply">回复</div>
+    <div class="tab-item" data-tab="media">媒体</div>
 </div>
 
 <div class="feed-box">
-    <!-- 帖子面板 空白可自行新增内容，下方附带标准卡片模板 -->
+    <!-- 帖子面板 -->
     <div class="tab-panel show" id="post">
         <!-- 第一条帖子 -->
         <div onclick="location.href='.html'" class="tweet-card">
@@ -167,7 +167,7 @@ a{
             </div>
         </div>
     </div>
-        <!-- 第二条帖子 补齐外层 tweet-card 容器 -->
+        <!-- 第二条帖子 修复闭合标签 -->
      <div onclick="location.href='.html'" class="tweet-card">
         <div>
             <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/RR.jpg') center/cover;"></div>
@@ -181,9 +181,9 @@ a{
                     推出的蝙蝠侠和红罗宾挂件<br>    
                 <img src="images/RR (3).jpg" style="max-width:100%;margin-top:10px;border-radius:4px;">
             </div>
-        </di
+        </div>
+    </div>
         <!-- 新增 -->
- <!-- 新增 -->
     <div onclick="location.href='.html'" class="tweet-card">
         <div>
             <div onclick="event.stopPropagation();location.href='home.html'" class="tweet-avatar" style="background:url('images/RR.jpg') center/cover;"></div>
@@ -232,14 +232,16 @@ a{
             </div>
         </div>
     </div>
-    <!-- 回复面板 -->
+    </div>
+
+    <!-- 回复面板 挪到post外面，同级 -->
     <div class="tab-panel" id="reply">
         <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
 由用户设置私密可见，你无权访问
         </div>
     </div>
 
-    <!-- 媒体面板私密提示 -->
+    <!-- 媒体面板私密提示 同级 -->
     <div class="tab-panel" id="media">
         <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
 由用户设置私密可见，你无权访问
@@ -262,4 +264,3 @@ tabs.forEach(tab => {
 </script>
 </body>
 </html>
-

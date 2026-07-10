@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>个人主页</title>
+<title>他人主页</title>
 <style>
 *{
     margin:0;
@@ -35,7 +35,7 @@ a{
     width:72px;
     height:72px;
     border-radius:50%;
-    background:url("images/user.jpg") center/cover;
+    background:url("images/drake.jpg") center/cover;
     margin-bottom:10px;
 }
 .username{
@@ -94,7 +94,7 @@ a{
     width:48px;
     height:48px;
     border-radius:50%;
-    background:url("images/default.jpg") center/cover;
+    background:url("images/drake.jpg") center/cover;
     flex-shrink:0;
 }
 .tweet-content{
@@ -127,8 +127,10 @@ a{
 </style>
 </head>
 <body>
-    <a onclick="location.href='index.html'" style="display:inline-block;color:#990000;text-decoration:none;font-size:18px;padding:12px 16px;">← 返回</a>
-<!-- 个人资料头部 头像+名字可点进自己主页 -->
+<!-- 蓝色按钮：返回玩家自己的主页home.html -->
+<a onclick="location.href='home.html'" style="display:inline-block;color:#1d9bf0;text-decoration:none;font-size:18px;padding:12px 16px;">← 返回我的主页</a>
+
+<!-- 个人资料头部 头像、昵称、ID点击停留在当前他人主页new.html -->
 <div class="profile-header">
     <a href="new.html">
         <div class="avatar"></div>
@@ -139,34 +141,33 @@ a{
     <p>个人主页</p>
 </div>
 
-<!-- Tab栏：帖子、回复、媒体 三等分 -->
+<!-- 三栏均分：帖子、回复、媒体 -->
 <div class="tab-wrap">
     <div class="tab-item active" data-tab="post">帖子</div>
     <div class="tab-item" data-tab="reply" style="color:#bbbbbb;">回复</div>
     <div class="tab-item" data-tab="media" style="color:#bbbbbb;">媒体</div>
 </div>
 
-<!-- 可上下滑动信息流区域 -->
 <div class="feed-box">
-  <!-- 帖子面板 -->
-<div onclick="location.href='这里填详情页文件名.html'" class="tweet-card">
+    <!-- 帖子面板 空白可自行新增内容，下方附带标准卡片模板 -->
+     <div class="tab-panel show" id="post">
+    <div onclick="location.href='msg4.html'" class="tweet-card">
     <div>
-        <div onclick="event.stopPropagation();location.href='new.html'" class="tweet-avatar" style="background:url('images/drake.jpg') center/cover;"></div>
+        <!-- 点击头像不会跳转，固定当前他人主页 -->
+        <div onclick="event.stopPropagation();location.href='new.html'" class="tweet-avatar"></div>
     </div>
     <div class="tweet-content">
         <div class="tweet-name-row">
             <span onclick="event.stopPropagation();location.href='new.html'" class="tweet-name">UHGURELQ</span>
-            <span class="tweet-tag">@youneverfindme · 发布时间</span>
+            <span class="tweet-tag">@youneverfindme · 9小时</span>
         </div>
-        <div class="tweet-text">
-帖子正文内容
-<!-- 如需图片加下面一行 -->
-<br>
-<img src="图片路径" style="max-width:100%;margin-top:10px;border-radius:4px;">
-        </div>
+        <div class="tweet-text">你还在吗？</div>
     </div>
 </div>
 
+   
+
+    </div>
 
     <!-- 回复面板 -->
     <div class="tab-panel" id="reply">
@@ -175,7 +176,7 @@ a{
         </div>
     </div>
 
-    <!-- 媒体面板 已替换提示文案 -->
+    <!-- 媒体面板私密提示 -->
     <div class="tab-panel" id="media">
         <div style="padding:40px 20px;text-align:center;color:#999;font-size:15px;">
 由用户设置私密可见，你无权访问
@@ -184,7 +185,6 @@ a{
 </div>
 
 <script>
-// 标签页切换逻辑
 const tabs = document.querySelectorAll('.tab-item');
 const panels = document.querySelectorAll('.tab-panel');
 tabs.forEach(tab => {
@@ -199,4 +199,3 @@ tabs.forEach(tab => {
 </script>
 </body>
 </html>
-

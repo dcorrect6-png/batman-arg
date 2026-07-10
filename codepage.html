@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>常用加密方式_搜索结果</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Microsoft YaHei", sans-serif;
+}
+body{
+    background: #ffffff;
+    padding: 20px 16px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+/* 返回按钮 */
+.back-btn{
+    display: inline-block;
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+/* 搜索主标题 */
+.search-title{
+    font-size: 22px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+}
+/* AI回答卡片容器 */
+.answer-card{
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    background: #fff;
+}
+.ai-tag{
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap:6px;
+}
+.ai-tag::before{
+    content:"AI";
+    background:#0084ff;
+    color:#fff;
+    font-size:11px;
+    padding:2px 5px;
+    border-radius:3px;
+}
+/* 正文段落 */
+.answer-card p{
+    font-size: 15px;
+    line-height: 1.75;
+    color: #333;
+    margin-bottom: 14px;
+    text-indent: 2em;
+}
+/* 小标题 */
+.answer-card h4{
+    font-size: 16px;
+    margin: 18px 0 8px;
+    color: #111;
+}
+</style>
+</head>
+<body>
+<a class="back-btn" href="index.html">← 返回首页</a>
+
+<div class="search-title">常用加密方式</div>
+
+<div class="answer-card">
+    <div class="ai-tag">AI生成回答</div>
+    <p>……</p>
+    <h4>凯撒加密</h4>
+    <p>凯撒加密属于经典移位对称加密算法，依靠固定数字作为偏移密钥完成字母替换加密，本条目标准解密偏移距离固定为<strong>5位</strong>。</p>
+    <p>加密原理：选取密钥数字5，把明文里每一个英文字母在字母表中向后推移5位；若推移后超出字母Z，则从字母表开头A处继续循环计数。</p>
+    <p>解密规则：已知密钥为5，将密文所有字母向前反向偏移5个字符，字母往前数不足A时从字母表末尾Z倒序循环，就能直接还原原始明文内容。</p>
+    <p>示例演示：明文为APPLE，向后偏移5位加密得到FUQNJ；将密文FUQNJ每一位向前偏移5位，即可解密还原出APPLE。</p>
+    <p>该加密方式结构简单，仅26种偏移可能性，可直接暴力枚举破解，一般仅用于解谜暗号、基础密码学学习，不适合正式信息安全加密场景。</p>
+    <p>……</p>
+</div>
+
+</body>
+</html>
